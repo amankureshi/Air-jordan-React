@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --red: #d01c28;
+  --gray: #2e2e2e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.container {
+
+  margin: 0 auto;
+  max-width: 1100px;
+  /* padding: 2rem 10%; */
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  align-items: center;
+  z-index: 10;
+}
+
+
+nav ul li {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-left: 0.4rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s all;
+  display: inline-block;
+
+}
+
+nav ul li:hover {
+  background-color: var(--red);
+  color: #fff;
+}
+
+.login-btn {
+  all: unset;
+  padding: 2px 20px;
+  background: var(--red);
+  height: 2.3rem;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 2px;
+}
+
+
+.hero {
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 72px);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero h1 {
+  font-weight: 800;
+  line-height: 102px;
+  font-size: 5.5rem;
+  line-height: 5.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-weight: 600;
+  color: var(--gray);
+}
+
+
+.hero-image img {
+  width: 21.7rem;
+  transform: rotate(-37deg);
+
+}
+
+.hero-btn {
+  display: flex;
+  gap: 1rem;
+}
+
+
+.shopping p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.brand-icon {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-btn .btn {
+  all: unset;
+  padding: 6px 10px;
+  background: var(--red);
+  height: 2.3rem;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 2px;
+}
+
+.secondary-btn {
+  all: unset;
+  background-color: transparent;
+  color: var(--gray);
+  border: 1px solid var(--gray);
+  padding: 6px 10px;
+  font-weight: 500;
+  border-radius: 2px;
+  padding: 6px 10px;
+}
+
+
+@media (max-width:786px) {
+  nav {
+    padding: 1rem 2%;
+    /* backdrop-filter: blur(5px); */
+  }
+
+
+  .hero {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 2px 7%;
+    height: auto;
+  }
+
+
+
+  .hero h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .hero p {
+    text-align: start;
+    letter-spacing: 1px;
+  }
+
+  .hero-image img {
+    max-width: 270px;
+    transform: rotate(1deg);
+  }
+
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background: #101010;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.hamburger {
+  display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px) {
+  .nav {
+    display: block;
+    position: fixed;
+    z-index: 3;
+  }
+
+  nav ul li:hover {
+    background-color: transparent;
+    color: var(--gray);
+    padding-left: 2rem;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 5%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+  }
+
+  .nav-links {
+    /* backdrop-filter: blur(5px); */
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    height: 100vh;
+    width: 100%;
+
+    clip-path: circle(50px at 90% -20%);
+    -webkit-clip-path: circle(50px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    text-align: center;
+    gap: 0.2rem;
+  }
+
+  .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+
+  }
+
+  .nav-links li {
+    opacity: 0;
+    color: #101010;
+  }
+
+  .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+
+  }
+
+  .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+  }
+
+  .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+  }
+
+  .nav-links li:nth-child(4) {
+    transition: all 0.5s ease 0.7s;
+  }
+
+  .nav-links li:nth-child(5) {
+    transition: all 0.5s ease 0.8s;
+  }
+
+  .nav-links li:nth-child(6) {
+    transition: all 0.5s ease 0.9s;
+    margin: 0;
+  }
+
+  .nav-links li:nth-child(7) {
+    transition: all 0.5s ease 1s;
+    margin: 0;
+  }
+
+  li.fade {
+    opacity: 1;
+  }
+}
+
+/*Animating Hamburger Icon on Click*/
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  transition: all 0.7s ease;
+  width: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
