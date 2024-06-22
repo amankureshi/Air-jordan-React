@@ -199,7 +199,7 @@ nav ul li:hover {
     position: absolute;
     cursor: pointer;
     right: 5%;
-    top: 5%;
+    top: 4%;
     transform: translate(-5%, -50%);
     z-index: 2;
     transition: all 0.7s ease;
